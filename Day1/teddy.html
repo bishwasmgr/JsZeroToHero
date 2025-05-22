@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Talking Teddy</title>
+</head>
+<body>
+  <h1>My Teddy Bear 🧸</h1>
+  <button onclick="talk()">Click me to hear Teddy!</button>
+  <p id="teddySpeech"></p>
+
+  <script>
+    let teddy = "🧸";
+
+   async function talk(){
+    let jokes = [
+        "Why did the teddy skip lunch? He was stuffed!",
+        "What's a teddy's favorite snack? A PB&J (Peanut Butter & Jelly)!",
+        "How do teddies answer the phone? 'Hello, honey!'"
+    ];
+    let randomJokes = jokes[Math.floor(Math.random()* jokes.length)];
+    document.getElementById("teddySpeech").innerHTML = teddy + " says: " + randomJokes;
+   }
+  </script>
+</body>
+</html>
