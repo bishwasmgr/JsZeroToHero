@@ -1,0 +1,5 @@
+Homework (5 mins)
+Change Teddy’s message to something else (e.g., "I’m sleepy! Zzz...").
+
+Add a new button to make Teddy say goodbye.
+

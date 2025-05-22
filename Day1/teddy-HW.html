@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day1 Challange</title>
+</head>
+<body>
+    <h1>My Teddy</h1>
+    <button onclick="message()">Get Teddy Message</button>
+    <button onclick="byeteddy()">Say Bye</button>
+    <button onclick="resetMessage()">Reset Message</button>
+    <p id="teddyMessage"></p>
+    <p id="byeMessage"></p>
+    <script>
+        async function message(){
+            let messages = [
+                "Why did the teddy skip lunch? He was stuffed!",
+                "What's a teddy's favorite snack? A PB&J (Peanut Butter & Jelly)!",
+                "How do teddies answer the phone? 'Hello, honey!'"
+            ]
+            let randomMessage = messages[Math.floor(Math.random() * messages.length)];
+            document.getElementById("teddyMessage").innerHTML = "🧸 says: "+ randomMessage;
+        }
+
+        async function byeteddy(){
+            let byeMessages = [
+                "Bye Bye! See you later!",
+                "Take care! Until next time!",
+                "Goodbye! Don't forget to hug me!"
+            ]
+            let randomByeMessage = byeMessages[Math.floor(Math.random() * byeMessages.length)]
+            document.getElementById("byeMessage").innerHTML = "🧸 says: "+ randomByeMessage;     
+        }
+
+        function resetMessage(){
+            document.getElementById("teddyMessage").innerHTML = "";
+            document.getElementById("byeMessage").innerHTML = "";
+        };
+        
+    </script>
+</body>
+</html>
