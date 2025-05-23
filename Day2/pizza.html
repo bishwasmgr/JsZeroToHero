@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pizza Order App</title>
+    <style>
+        body { font-family: Arial, sans-serif; text-align: center; margin-top: 50px; }
+        button { padding: 10px 20px; font-size: 16px; cursor: pointer; }
+        #orderSummary { margin: 20px; padding: 15px; border: 1px dashed #ccc; }
+    </style>
+</head>
+<body>
+    <h1>🍕 Pizza Order App</h1>
+    <button onclick="takeOrder()">Place Order</button>
+     <button onclick="reset()">Cancel Order</button>
+    <div id="orderSummary"></div>
+
+    <script>
+        function takeOrder(){
+            let userName = prompt("Your name for the order:");
+            
+            if (!userName) userName = prompt("Your name for the order:");
+
+            let toppingInput = prompt("Enter your pizza toppings (comma-separated):");
+            let topping = toppingInput ? topppingInput.split(',') : ['Cheese'];
+
+            let basePrice = 10;
+            let toppingPrice = topping.length * 2;
+            let totalPrice = basePrice + toppingPrice;
+
+            let orderHTML = `
+                <h2>Order Summary</h2>
+                <p><strong>Name:</strong> ${userName}</p>
+                <p><strong>Toppings:</strong> ${topping.join(', ')}</p>
+                <p><strong>Total Price:</strong> $${totalPrice}</p>
+            `;
+            document.getElementById('orderSummary').innerHTML = orderHTML;
+            alert(`Thank you for your order, ${userName}! Your total is $${totalPrice}.`);
+        }
+        function reset(){
+            document.getElementById('orderSummary').innerHTML = '';
+            alert("Order has been canceled.");
+        }
+
+    </script>
+</body>
+</html>
